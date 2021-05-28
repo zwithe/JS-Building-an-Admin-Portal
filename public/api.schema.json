@@ -41,7 +41,7 @@
                     "book"
                 ],
                 "summary": "updateBook",
-                "description": "updates the properties of a specific book on the server",
+                "description": "updates the properties of a specific book on the server. 'id' is a required field when invoking this endpoint.",
                 "operationId": "updateBook",
                 "consumes": [
                     "application/json"
