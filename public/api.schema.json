@@ -5,20 +5,20 @@
         "version": "1.0.0",
         "title": "Book API"
     },
-    "host": "localhost:9000",
+    "host": "localhost:3001",
     "basePath": "/",
     "schemes": [
         "http"
     ],
     "paths": {
-        "/getBooks": {
+        "/listBooks": {
             "get": {
                 "tags": [
                     "book"
                 ],
-                "summary": "getBooks",
+                "summary": "listBooks",
                 "description": "retrieves a list of books from the server",
-                "operationId": "getBooks",
+                "operationId": "listBooks",
                 "produces": [
                     "application/json"
                 ],
@@ -82,14 +82,14 @@
                 }
             }
         },
-        "/deleteBook/{bookId}": {
+        "/removeBook/{bookId}": {
             "delete": {
                 "tags": [
                     "book"
                 ],
-                "summary": "deleteBook",
+                "summary": "removeBook",
                 "description": "deletes a specific book from the server",
-                "operationId": "deleteBook",
+                "operationId": "removeBook",
                 "produces": [
                     "application/json"
                 ],

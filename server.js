@@ -12,7 +12,7 @@ async function main() {
 
     app.use(bodyParser.json());
 
-    app.get('/getBooks', async (req, res) => {
+    app.get('/listBooks', async (req, res) => {
         let books = await loadBooks()
         res.json(books);
     })
@@ -42,7 +42,7 @@ async function main() {
         res.json(book)
     })
 
-    app.delete('/deleteBook/:id', async (req, res) => {
+    app.delete('/removeBook/:id', async (req, res) => {
         let books = await loadBooks()
         if (!req.params.id) return res.status(400).json({ error: true, message: `'id' is required in the request body when calling 'updateBook'. Make sure you're stringifying the body of your request, and sending the appropriate headers.` })
         let bookToDelete = books.find(book => book.id === parseInt(req.params.id));
@@ -52,9 +52,9 @@ async function main() {
         res.json(bookToDelete)
     })
 
-    app.listen(9001, () => {
+    app.listen(3001, () => {
         liveServer.start({
-            port: 9000,
+            port: 3000,
             logLevel: 0,
             root: './public'
         })
