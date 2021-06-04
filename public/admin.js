@@ -3,7 +3,7 @@
 
 async function main() {
 
-    let response = await fetch('http://localhost:9001/getBooks')
+    let response = await fetch('http://localhost:3001/listBooks')
 
     let books = await response.json()
 
@@ -23,7 +23,7 @@ function renderBook(book) {
     saveButton.textContent = 'Save'
 
     saveButton.addEventListener('click', () => {
-        fetch('http://localhost:9001/updateBook', {
+        fetch('http://localhost:3001/updateBook', {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
